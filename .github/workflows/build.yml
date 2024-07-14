@@ -12,6 +12,6 @@ jobs:
     name: build with testspec
     steps:
       - name: Use Testspec Action to Clone and Run
-        uses: Testing-By-Specification/testspec-action@v0.0.1-beta-1.0
+        uses: Testing-By-Specification/testspec-action@v0.0.0-beta-1.0
         with:
           action_path: './gradlew build'
