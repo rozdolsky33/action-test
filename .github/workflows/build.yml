@@ -1,0 +1,17 @@
+name: CI Build
+
+on:
+  push:
+    branches:
+      - '*'
+
+
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+    name: build with testspec
+    steps:
+      - name: Use Testspec Action to Clone and Run
+        uses: Testing-By-Specification/testspec-action@v1
+        with:
+          action_path: './gradlew build'
