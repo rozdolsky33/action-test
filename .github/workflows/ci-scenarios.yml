@@ -1,4 +1,4 @@
-name: Run TestSpec
+name: Run TestSpec Scenarios
 
 on:
   push:
