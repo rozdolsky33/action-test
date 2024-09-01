@@ -1,0 +1,2 @@
+Command,Expected STDOUT
+echo Hi,Hi
