@@ -24,4 +24,4 @@ jobs:
         with:
           version: '0.0.4'        
           plugin_type: 'directory'
-          plugin_path: './features/rest' 
+          plugin_path: './src/test/resources/features/rest' 
