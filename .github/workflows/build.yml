@@ -6,9 +6,9 @@ on:
       - '*'
 
 jobs:
-  build-job:
+  rest:
     runs-on: ubuntu-latest
-    name: build with testspec
+    name: Test Spec Action Rest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -19,9 +19,29 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
         
-      - name: Use Testspec Action to Clone and Run
+      - name: RestAPI Features Testing
         uses: Testing-By-Specification/testspec-action@v0.0.4-beta.1
         with:
           version: '0.0.4'        
           plugin_type: 'directory'
           plugin_path: './src/test/resources/features/rest' 
+
+  database:
+    runs-on: ubuntu-latest
+    name: Test Spec Action Database
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+        
+      - name: Database Features Testing
+        uses: Testing-By-Specification/testspec-action@v0.0.4-beta.1
+        with:
+          version: '0.0.4'        
+          plugin_type: 'directory'
+          plugin_path: './src/test/resources/features/database'     
