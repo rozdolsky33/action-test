@@ -16,6 +16,6 @@ jobs:
       - name: Use Testspec Action to Clone and Run
         uses: Testing-By-Specification/testspec-action@v0.0.4-beta.1
         with:
-          version: '0.0.4'         # The version tag of the release to download
+          version: '0.0.4'        
           plugin_type: 'directory'  # Specify 'directory' or 'file' based on the usage
           plugin_path: './features/core' 
