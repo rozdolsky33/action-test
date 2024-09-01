@@ -12,6 +12,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
         
       - name: Use Testspec Action to Clone and Run
         uses: Testing-By-Specification/testspec-action@v0.0.4-beta.1
