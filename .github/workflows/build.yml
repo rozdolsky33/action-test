@@ -8,7 +8,7 @@ on:
 jobs:
   rest:
     runs-on: ubuntu-latest
-    name: Test Spec Action Rest
+    name: TestSpec Action RestAPI
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -28,7 +28,7 @@ jobs:
 
   database:
     runs-on: ubuntu-latest
-    name: Test Spec Action Database
+    name: TestSpec Action Database
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -45,3 +45,44 @@ jobs:
           version: '0.0.4'        
           plugin_type: 'directory'
           plugin_path: './src/test/resources/features/database'     
+
+  core:
+    runs-on: ubuntu-latest
+    name: TestSpec Action Core
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+        
+      - name: Command Features Testing
+        uses: Testing-By-Specification/testspec-action@v0.0.4-beta.1
+        with:
+          version: '0.0.4'        
+          plugin_type: 'file'
+          plugin_path: './src/test/resources/features/core/Command.feature'    
+          
+      - name: Core Features Testing
+        uses: Testing-By-Specification/testspec-action@v0.0.4-beta.1
+        with:
+          version: '0.0.4'        
+          plugin_type: 'file'
+          plugin_path: './src/test/resources/features/core/Core.feature' 
+
+      - name: Exampples in Features Testing
+        uses: Testing-By-Specification/testspec-action@v0.0.4-beta.1
+        with:
+          version: '0.0.4'        
+          plugin_type: 'file'
+          plugin_path: './src/test/resources/features/core/ExamplesInFeature.feature' 
+        
+      - name: Tags Features Testing
+        uses: Testing-By-Specification/testspec-action@v0.0.4-beta.1
+        with:
+          version: '0.0.4'        
+          plugin_type: 'file'
+          plugin_path: './src/test/resources/features/core/Tags.feature' 
