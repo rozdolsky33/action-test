@@ -1,0 +1,6 @@
+
+    | Google landing page     | https://www.google.com               |
+    | Google Search input box | $('input[name=q]')                   |
+    | Google Search button    | $('input[value="Google Search"]')[0] |
+    | Google results titles   | $('div[class="rc"] > h3[class=r]')   |
+    | Result Stats region     | $('div[id="result-stats"]')          |

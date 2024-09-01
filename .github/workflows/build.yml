@@ -1,17 +1,18 @@
-name: CI Build
+name: Run TestSpec
 
 on:
   push:
     branches:
       - '*'
 
-
 jobs:
   build-job:
     runs-on: ubuntu-latest
-    name: build with testspec
+    name: Run TestSpec
     steps:
       - name: Use Testspec Action to Clone and Run
-        uses: Testing-By-Specification/testspec-action@v0.0.0-beta-1.0
+        uses: Testing-By-Specification/testspec-action@0.0.4-beta.1
         with:
-          action_path: './gradlew build'
+          version: '0.0.4'         # The version tag of the release to download
+          plugin_type: 'directory'  # Specify 'directory' or 'file' based on the usage
+          plugin_path: './features/core' 

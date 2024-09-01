@@ -1,0 +1,4 @@
+
+| New Ukrainian Wave landing page | https://www.ukrainianworldcongress.org/uwc-member/new-ukrainian-wave/ |
+| Login Button                    | $('button[type="submit"]')                                            |
+| Email input                     | $('input[id="email"]')                                                |
