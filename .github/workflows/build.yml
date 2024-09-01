@@ -8,8 +8,11 @@ on:
 jobs:
   build-job:
     runs-on: ubuntu-latest
-    name: Run TestSpec
+    name: build with testspec
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
       - name: Use Testspec Action to Clone and Run
         uses: Testing-By-Specification/testspec-action@0.0.4-beta.1
         with:
